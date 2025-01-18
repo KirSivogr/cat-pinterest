@@ -1,5 +1,6 @@
 {
   "name": "cat-pinterest",
+  "homepage": "https://KirSivogr.github.io/cat-pinterest",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
@@ -23,7 +24,7 @@
     "dotenv": "16.0.3",
     "dotenv-webpack": "^8.0.1",
     "formik": "^2.4.5",
-    "gh-pages": "5.0.0",
+    "gh-pages": "^5.0.0",
     "kill-port": "^2.0.1",
     "lint-staged": "^13.2.2",
     "lodash": "^4.17.21",
