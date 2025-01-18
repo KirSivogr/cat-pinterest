@@ -37,8 +37,26 @@ Cat Pinterest — это приложение для галереи изобра
    cd cat-pinterest
    npm install
     ```
+   
+2. Создайте файл .env в корне проекта:
 
-2. Запуск:
+3. Зарегистрируйтесь или войдите на сайт [TheCatAPI](https://thecatapi.com/).
+
+4. Перейдите в раздел [API](https://thecatapi.com/docs) на сайте.
+
+5. В разделе API вы найдете инструкцию по получению вашего API ключа.
+
+6. Добавление API ключа в файл .env
+
+В файле `.env` добавьте ваш API ключ следующим образом:
+
+```bash
+REACT_APP_API_KEY='your-api-key-here'
+```
+
+**Важно:** Замените `'your-api-key-here'` на ваш настоящий API ключ.
+
+7. Запуск:
 
     ```bash
    npm start
