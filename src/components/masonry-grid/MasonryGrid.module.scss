@@ -1,0 +1,30 @@
+.masonry-grid {
+  display: flex;
+  margin: 3rem;
+  flex-wrap: wrap;
+}
+
+.cat-item {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-left: 1.25rem;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+  transition: 1s;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &:hover .heart-icon {
+    opacity: 1;
+  }
+}
