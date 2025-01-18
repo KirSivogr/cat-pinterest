@@ -48,13 +48,13 @@ Cat Pinterest — это приложение для галереи изобра
 
 6. Добавление API ключа в файл .env
 
-В файле `.env` добавьте ваш API ключ следующим образом:
+    В файле `.env` добавьте ваш API ключ следующим образом:
+    
+    ```bash
+    REACT_APP_API_KEY='your-api-key-here'
+    ```
 
-```bash
-REACT_APP_API_KEY='your-api-key-here'
-```
-
-**Важно:** Замените `'your-api-key-here'` на ваш настоящий API ключ.
+    **Важно:** Замените `'your-api-key-here'` на ваш настоящий API ключ.
 
 7. Запуск:
 
