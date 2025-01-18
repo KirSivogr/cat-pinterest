@@ -8,7 +8,7 @@ import { useFavorite } from '@/hooks/useFavorite';
 import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
 import { fetchCatsList } from '@/slices/catSlice';
 
-import './CatsGallery.module..scss';
+import './CatsGallery.scss';
 
 export const CatsGallery: React.FC = () => {
    const { page } = useInfiniteScroll();

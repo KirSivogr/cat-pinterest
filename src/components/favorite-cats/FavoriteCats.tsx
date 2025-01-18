@@ -1,7 +1,7 @@
 import { MasonryGrid } from '@/components/masonry-grid/MasonryGrid';
 import { useFavorite } from '@/hooks/useFavorite';
 
-import './FavoriteCats.module.scss';
+import './FavoriteCats.scss';
 
 export const FavoriteCats = () => {
    const { handleClickFavorite, favoritesItems } = useFavorite();

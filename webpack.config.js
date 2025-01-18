@@ -2,14 +2,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const dotenv = require('dotenv-webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
    entry: path.resolve(__dirname, 'src/index.tsx'),
    devtool: 'inline-source-map',
    output: {
-      filename: 'main.js',
+      filename: '[name].[contenthash].js', // Для лучшего кэширования
       path: path.resolve(__dirname, 'build'),
+      clean: true, // Очищает папку build перед сборкой
    },
+   mode: 'production',
    module: {
       rules: [
          {
@@ -23,15 +26,10 @@ module.exports = {
          },
          {
             test: /\.(png|svg|jpg|jpeg|gif)$/i,
-            use: [
-               {
-                  loader: 'file-loader',
-                  options: {
-                     name: '[name].[ext]',
-                     outputPath: 'images',
-                  },
-               },
-            ],
+            type: 'asset/resource', // Рекомендуется использовать asset/resource
+            generator: {
+               filename: 'images/[name].[hash][ext]',
+            },
          },
       ],
    },
@@ -40,7 +38,7 @@ module.exports = {
          directory: path.join(__dirname, 'build'),
       },
       port: 3001,
-      historyApiFallback: true, // Добавьте эту строку
+      historyApiFallback: true, // Для работы с React Router
    },
    resolve: {
       fallback: {
@@ -54,12 +52,15 @@ module.exports = {
       alias: {
          '@/*': path.resolve(__dirname, 'src'),
       },
-      extensions: ['.*', '.js', '.jsx', '.ts', '.tsx'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
    },
    plugins: [
       new HtmlWebpackPlugin({
-         title: 'cat-pinterest',
+         title: 'Cat Pinterest',
          template: path.join(__dirname, 'public', 'index.html'),
+      }),
+      new MiniCssExtractPlugin({
+         filename: '[name].[contenthash].css',
       }),
       new dotenv(),
    ],

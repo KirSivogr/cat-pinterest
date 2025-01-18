@@ -4,7 +4,7 @@ import { HeartIcon } from '@/components/heart-icon/HeartIcon';
 import { BREAKPOINT_COLS } from '@/constants/constants';
 import { IFilteredCat } from '@/types/interface';
 
-import './MasonryGrid.module.scss';
+import './MasonryGrid.scss';
 import Masonry from 'react-masonry-css';
 
 type MasonryGridProps = {

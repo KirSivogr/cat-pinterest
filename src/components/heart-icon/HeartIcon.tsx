@@ -2,7 +2,7 @@ import React from 'react';
 
 import { IFilteredCat } from '@/types/interface';
 
-import './HeartIcon.module.scss';
+import './HeartIcon.scss';
 
 type HeartIconProps = {
    id: string;
