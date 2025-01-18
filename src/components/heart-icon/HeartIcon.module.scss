@@ -1,0 +1,32 @@
+.heart-icon {
+  position: absolute;
+  bottom: 0.625rem;
+  right: 0.625rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: transform 0.3s, background-color 0.3s;
+  opacity: 0;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover .icon {
+    fill: #ff4d4d;
+  }
+
+  &.filled .icon {
+    fill: #ff4d4d;
+  }
+
+  .icon {
+    fill: none;
+    stroke: #ff4d4d;
+    stroke-width: 0.09375rem;
+    transition: fill 0.3s ease;
+  }
+}
