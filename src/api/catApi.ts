@@ -7,12 +7,15 @@ import { createAxiosInstance } from './instanse';
 const instance = createAxiosInstance();
 
 export async function getCatList(page: number) {
-   const response: AxiosResponse = await instance.get('search', {
-      params: {
-         page,
-         limit: CATS_PER_PAGE,
+   const response: AxiosResponse = await instance.get(
+      `search?$api_key=${process.env.REACT_APP_API_KEY}`,
+      {
+         params: {
+            page,
+            limit: CATS_PER_PAGE,
+         },
       },
-   });
+   );
 
    return response.data;
 }
