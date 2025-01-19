@@ -6,13 +6,15 @@ export function useInfiniteScroll() {
    const handleScroll = () => {
       if (
          window.innerHeight + document.documentElement.scrollTop >=
-         document.documentElement.offsetHeight - 300
+         document.documentElement.offsetHeight - 200
       ) {
          setPage(prevPage => prevPage + 1);
       }
    };
 
    useEffect(() => {
+      handleScroll(); // Проверка условия сразу после монтирования
+
       window.addEventListener('scroll', handleScroll);
 
       return () => {
