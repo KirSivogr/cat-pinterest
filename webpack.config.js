@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -15,6 +16,17 @@ module.exports = {
    mode: 'production',
    module: {
       rules: [
+         {
+            test: /\.module.css$/,
+            use: [
+               {
+                  loader: 'css-loader',
+                  options: {
+                     modules: true, // Раз — и готово
+                  },
+               },
+            ],
+         },
          {
             test: /\.(js|jsx|ts|tsx)$/,
             exclude: /node_modules/,
@@ -55,6 +67,9 @@ module.exports = {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
    },
    plugins: [
+      new webpack.DefinePlugin({
+         'process.env.REACT_APP_API_KEY': JSON.stringify(process.env.REACT_APP_API_KEY),
+      }),
       new HtmlWebpackPlugin({
          title: 'Cat Pinterest',
          template: path.join(__dirname, 'public', 'index.html'),
