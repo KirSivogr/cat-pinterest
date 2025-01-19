@@ -6,7 +6,7 @@ export function useInfiniteScroll() {
    const handleScroll = () => {
       if (
          window.innerHeight + document.documentElement.scrollTop >=
-         document.documentElement.offsetHeight - 100
+         document.documentElement.offsetHeight - 250
       ) {
          setPage(prevPage => prevPage + 1);
       }
