@@ -28,8 +28,14 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 785px) {
   .nav-link {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 481px) {
+  .nav-link {
+    display: none;
   }
 }
