@@ -11,6 +11,11 @@ export const BurgerMenu = () => {
       setIsOpen(!isOpen);
    };
 
+   const handleNavigation = (path: string) => {
+      navigate(path);
+      setIsOpen(false);
+   };
+
    return (
       <div className='burger-menu'>
          <button className='burger-button' onClick={toggleMenu}>
@@ -24,12 +29,10 @@ export const BurgerMenu = () => {
             )}
             <ul>
                <li>
-                  <a onClick={() => navigate('/', { replace: false })}>Все котики</a>
+                  <a onClick={() => handleNavigation('/')}>Все котики</a>
                </li>
                <li>
-                  <a onClick={() => navigate('/favorites', { replace: false })}>
-                     Любимые котики
-                  </a>
+                  <a onClick={() => handleNavigation('/favorites')}>Любимые котики</a>
                </li>
             </ul>
          </nav>
